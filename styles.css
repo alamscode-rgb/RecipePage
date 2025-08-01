@@ -124,6 +124,11 @@ section:not([class~="overview"]):not([class~="ingredients"]) {
   margin-block-end: 3rem;
   padding-inline-start: 1.75rem;
 }
+.preparation{
+  background-color: var(--rose-50);
+  border-radius: 0.5rem;
+}
+
 .preparation > ul > li {
   color: var(--rose-800);
 }
@@ -155,6 +160,7 @@ section:not([class~="overview"]):not([class~="ingredients"]) {
 }
 .row > td {
   padding: 0.5rem 3rem;
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 376px) {
