@@ -1,0 +1,172 @@
+@font-face {
+  font-family: "Outfit";
+  src: url("./assets/fonts/outfit/Outfit-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Young Serif";
+  src: url("./assets/fonts/young-serif/youngserif.regular.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --stone-100: hsl(30, 54%, 90%);
+  --stone-150: hsl(30, 18%, 87%);
+  --stone-600: hsl(30, 10%, 34%);
+  --stone-900: hsl(24, 5%, 18%);
+  --brown-800: hsl(14, 45%, 36%);
+  --rose-800: hsl(332, 51%, 32%);
+  --rose-50: hsl(330, 100%, 98%);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+p,
+th {
+  font-size: 1rem;
+  color: var(--stone-600);
+  font-weight: normal;
+}
+li,
+td {
+  color: var(--brown-800);
+  padding-block: 0.3rem;
+  padding-inline-start: 1.1rem;
+}
+body {
+  background-color: var(--stone-100);
+  font-family: "Outfit", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.5;
+}
+header,
+h1 {
+  font-family: "Young Serif", serif;
+  font-weight: 400;
+}
+h1 {
+  line-height: 1;
+}
+header {
+  font-size: 33.5px;
+  font-size: clamp(2rem, 5vw, 2.1rem);
+  color: var(--brown-800);
+  margin-block-end: 1rem;
+}
+h4 {
+  color: var(--rose-800);
+  font-size: clamp(1.125rem, 3vw, 1.25rem);
+  font-weight: 600;
+}
+ol {
+  padding-inline-start: 1.4rem;
+}
+ul {
+  list-style: none;
+}
+ul > li {
+  padding-inline-start: 2rem;
+  padding-inline-end: 1.5rem;
+  margin-inline-start: 0.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+ul > li::before {
+  content: "•";
+  position: absolute;
+  inset-inline-start: 0;
+  font-size: 1rem;
+}
+
+section:not([class~="overview"]):not([class~="ingredients"]) {
+  padding-block: 2rem;
+  border-block-start: 1px solid var(--stone-150);
+}
+
+.container {
+  background-color: var(--white);
+  max-width: 45rem;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-block: 6rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.overview {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 8vh, 1rem);
+}
+.overview .image {
+  width: 100%;
+  border-radius: 12px;
+}
+.overview .name {
+  font-size: clamp(2.5rem, 6vw, 3.05rem);
+}
+.overview .preparation {
+  margin-block-start: 2rem;
+  margin-block-end: 3rem;
+  padding-inline-start: 1.75rem;
+}
+.preparation > ul > li {
+  color: var(--rose-800);
+}
+
+.ingredients > ul {
+  padding-block-end: 2rem;
+}
+.ingredients > ul > li {
+  color: var(--brown-800);
+}
+
+.nutrition {
+  padding-block-end: 0;
+}
+.nutrition > p {
+  margin-block-end: 1rem;
+  padding-inline-end: 0.2rem;
+}
+.nutrition .table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.table .row:not(.row:last-child) {
+  border-block-end: 1px solid var(--stone-150);
+}
+.row > th {
+  text-align: start;
+  padding: 0.5rem 1.8rem;
+}
+.row > td {
+  padding: 0.5rem 3rem;
+}
+
+@media only screen and (max-width: 376px) {
+  .container{
+    margin: 0;
+  }
+  .container .image {
+    width: calc(100% + 4rem);
+    margin: -2rem -2rem 0 -2rem;
+    border-radius: 0;
+  }
+  .overview .name {
+    font-size: clamp(2.25rem, 5vw, 2.75rem);
+  }
+}
